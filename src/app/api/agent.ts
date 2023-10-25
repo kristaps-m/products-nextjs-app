@@ -60,13 +60,13 @@ const TestErrors = {
   getValidationError: () => requests.get("buggy/validation-error"),
 };
 
-const OneProduct = {
+const Catalog = {
   list: () => requests.get("products"),
   details: (id: number) => requests.get(`products/${id}`),
 };
 
 const agent = {
-  OneProduct,
+  Catalog,
   TestErrors,
 };
 
