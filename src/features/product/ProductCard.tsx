@@ -43,6 +43,12 @@ export default function ProductCard({ product }: Props) {
       </h3>
       <p>Price: {product.price}</p>
       <p>Category: {product.category}</p>
+      {/* <button component={Link} to={`products/${product.id}`} size="small">
+        View
+      </button> */}
+      <a href={`/products/${product.id}`}>
+        <button className="button-style">View</button>
+      </a>
     </div>
     // <Card>
     //   <CardHeader
