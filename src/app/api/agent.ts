@@ -59,7 +59,11 @@ const TestErrors = {
   // get500Error: () => requests.get("buggy/server-error"),
   getValidationError: () => requests.get("buggy/validation-error"),
 };
-
+/*
+          const foundProduct = data.products.find(
+            (p: Product) => p.id === idToFind
+          );
+*/
 const Catalog = {
   list: () => requests.get("products"),
   details: (id: number) => requests.get(`products/${id}`),

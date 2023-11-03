@@ -36,3 +36,29 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 used code from udemy.com :)
+
+```
+  useEffect(() => {
+    agent.Catalog.list()
+      .then((products) => setProducts(products.products))
+      .catch((error) => console.error(error))
+      .finally(() => setLoading(false));
+  }, []); // Add [] dependency to prevent infinite loop. And call 'useEffect' method once!!!!!!
+```
+
+this works for search
+
+```
+  useEffect(() => {
+    agent.Catalog.list()
+      .then((products) => {
+        const filteredProducts = products.products.filter((product: Product) =>
+          product.name.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+        console.log(filteredProducts, "these are filteredProducts");
+        setProducts(filteredProducts);
+      })
+      .catch((error) => console.error(error))
+      .finally(() => setLoading(false));
+  }, [searchTerm]); // Add [] dependency to prevent infinite loop. And call 'useEffect' method once!!!!!!
+```
