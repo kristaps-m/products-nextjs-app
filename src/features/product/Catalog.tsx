@@ -21,6 +21,11 @@ export default function Catalog() {
 
   return (
     <>
+      <h3>This is Catalog.tsx</h3>
+      <p>
+        -------------Below this line ProductList is beeing rendered
+        --------------------
+      </p>
       <ProductList products={products.products} />
     </>
   );
