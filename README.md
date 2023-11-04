@@ -62,3 +62,6 @@ this works for search
       .finally(() => setLoading(false));
   }, [searchTerm]); // Add [] dependency to prevent infinite loop. And call 'useEffect' method once!!!!!!
 ```
+
+Debounce:
+https://stackoverflow.com/questions/42217121/how-to-start-search-only-when-user-stops-typing
