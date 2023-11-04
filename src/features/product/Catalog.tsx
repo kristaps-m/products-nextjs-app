@@ -22,30 +22,43 @@ export default function Catalog() {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState(""); // Add searchTerm state
 
-  const handleSearch = (searchTerm: string) => {
-    //console.log(searchTerm);
-    //searchTerm = "apple";
-    // Fetch all products (or use a cached copy if available)
+  // const handleSearch = (searchTerm: string) => {
+  //   //console.log(searchTerm);
+  //   //searchTerm = "apple";
+  //   // Fetch all products (or use a cached copy if available)
+  //   agent.Catalog.list()
+  //     .then((allProducts) => {
+  //       // Filter products based on the search term
+  //       const filteredProducts = allProducts.products.filter(
+  //         (product: Product) =>
+  //           product.name.toLowerCase().includes(searchTerm.toLowerCase())
+  //       );
+  //       // console.log(filteredProducts, "these are filteredProducts");
+  //       setProducts(filteredProducts); // {products: filteredProducts}
+  //     })
+  //     .catch((error) => console.error(error))
+  //     .finally(() => setLoading(false));
+  // };
+
+  // const debouncedSearch = debounce(handleSearch, 300);
+
+  // useEffect(() => {
+  //   setLoading(true); // Show loading indicator
+  //   debouncedSearch(searchTerm); // Trigger the search after a delay when the user stops typing
+  // }, [debouncedSearch, searchTerm]);
+
+  useEffect(() => {
     agent.Catalog.list()
-      .then((allProducts) => {
-        // Filter products based on the search term
-        const filteredProducts = allProducts.products.filter(
-          (product: Product) =>
-            product.name.toLowerCase().includes(searchTerm.toLowerCase())
+      .then((products) => {
+        const filteredProducts = products.products.filter((product: Product) =>
+          product.name.toLowerCase().includes(searchTerm.toLowerCase())
         );
-        // console.log(filteredProducts, "these are filteredProducts");
-        setProducts(filteredProducts); // {products: filteredProducts}
+        console.log(filteredProducts, "these are filteredProducts");
+        setProducts(filteredProducts);
       })
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
-  };
-
-  const debouncedSearch = debounce(handleSearch, 300);
-
-  useEffect(() => {
-    setLoading(true); // Show loading indicator
-    debouncedSearch(searchTerm); // Trigger the search after a delay when the user stops typing
-  }, [debouncedSearch, searchTerm]);
+  }, [searchTerm]); // Add [] dependency to prevent infinite loop. And call 'useEffect' method once!!!!!!
 
   // useEffect(() => {
   //   agent.Catalog.list()
