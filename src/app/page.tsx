@@ -8,12 +8,6 @@ import Image from "next/image";
 const NavigationButtons = () => {
   return (
     <div>
-      {/* <Link href="/">
-        <a>HomePage</a>
-      </Link>
-      <Link href="/products">
-        <a>Catalog</a>
-      </Link> */}
       <Link href="/">Home</Link>
       <br />
       <br />
