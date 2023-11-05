@@ -3,6 +3,7 @@ import agent from "../../app/api/agent";
 import { Product } from "../../app/models/product";
 import ProductList from "./ProductList";
 import { useDebounce } from "use-debounce";
+import { NavigationButtons } from "@/app/NavigationButtons";
 
 export default function Catalog() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -29,9 +30,9 @@ export default function Catalog() {
 
   return (
     <>
-      <h3>This is Catalog.tsx</h3>
-      <div>
-        <input
+      <NavigationButtons />
+      <div className="flex justify-center">
+        {/* <input
           type="text"
           value={text}
           placeholder="Search products..."
@@ -39,7 +40,22 @@ export default function Catalog() {
             setText(e.target.value);
           }}
         />
-        <button onClick={handleReset}>Reset</button>
+        <button onClick={handleReset}>Reset</button> */}
+        <input
+          type="text"
+          value={text}
+          placeholder="Search products..."
+          onChange={(e) => {
+            setText(e.target.value);
+          }}
+          className="w-64 px-4 py-2 rounded-full border border-gray-300 focus:ring focus:ring-blue-200"
+        />
+        <button
+          onClick={handleReset}
+          className="ml-2 px-4 py-2 rounded-full bg-blue-500 hover:bg-blue-600 text-white"
+        >
+          Reset
+        </button>
         {/* <h2>uncomment this for searchterm testing</h2>
         <p>Actual value: {text}</p>
         <p>Debounce value: {searchTerm}</p> */}
