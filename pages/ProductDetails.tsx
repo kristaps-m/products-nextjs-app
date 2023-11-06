@@ -5,14 +5,6 @@ import agent from "../src/app/api/agent";
 import { NavigationButtons } from "@/app/NavigationButtons";
 import "./../src/app/globals.css";
 
-const productDetailsStyle = {
-  width: "50%",
-  margin: "0 auto",
-  padding: "20px",
-  border: "1px solid #ccc",
-  borderRadius: "5px",
-};
-
 const textSizeSytle = {
   fontSize: "3rem",
 };
@@ -51,7 +43,7 @@ const ProductDetails = () => {
         {loading ? (
           <p>Loading...</p>
         ) : product ? (
-          <div style={productDetailsStyle}>
+          <div className="product-details">
             <h1 style={textSizeSytle}>{product.name}</h1>
             <img
               src={`https://picsum.photos/id/${product.id + 10}/400/300`}
