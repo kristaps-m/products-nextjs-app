@@ -60,7 +60,9 @@ export default function Catalog() {
         <p>Actual value: {text}</p>
         <p>Debounce value: {searchTerm}</p> */}
       </div>
-      {loading ? <h1>Loading...</h1> : <ProductList products={products} />}
+      <div className="flex justify-center">
+        {loading ? <h1>Loading...</h1> : <ProductList products={products} />}
+      </div>
     </>
   );
 }

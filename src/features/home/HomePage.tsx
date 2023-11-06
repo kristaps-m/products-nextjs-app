@@ -2,17 +2,20 @@ import React from "react";
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen p-4">
-      <h2 className="text-3xl font-bold mb-4">Welcome to Our Product Shop</h2>
-      <p className="text-lg text-center mb-8">
+    <div>
+      <h1 className="flex justify-center text-3xl font-bold mb-4">
+        Welcome to Our Product Shop
+      </h1>
+      <p className="flex justify-center text-lg text-center mb-8">
         Explore our wide range of high-quality products.
       </p>
-
+      <br />
+      <br />
       <div className="product flex items-center justify-center p-4 bg-white rounded-lg shadow-lg">
         <img
-          src="https://fastly.picsum.photos/id/292/3852/2556.jpg?hmac=cPYEh0I48Xpek2DPFLxTBhlZnKVhQCJsbprR-Awl9lo"
-          width={500}
-          height={500}
+          src="https://picsum.photos/id/292/500/500"
+          // width={500}
+          // height={500}
           alt="Product Image"
           className="product-image rounded-lg"
         />
@@ -36,7 +39,7 @@ export default function HomePage() {
           <p className="text-sm font-semibold text-green-600">Price: $8.99</p>
         </div>
       </div>
-      <p>
+      <p className="flex justify-center">
         DISCLAIMER: Images are just to represent possible picture size in a real
         application. Do not take what&apos;s displayed in pictures seriously.
       </p>

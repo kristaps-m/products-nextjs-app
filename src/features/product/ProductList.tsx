@@ -19,7 +19,7 @@ export default function ProductList({ products }: Props) {
   const rows = groupProductsByRows(products, 3);
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="items-center">
       {rows.map((row, rowIndex) => (
         <div className="flex space-x-4" key={rowIndex}>
           {row.map((product) => (
