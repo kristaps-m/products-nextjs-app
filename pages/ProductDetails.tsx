@@ -31,7 +31,7 @@ const ProductDetails = () => {
         })
         .catch((error) => console.error("Error fetching product data:", error))
         .finally(() => {
-          setLoading(false); // Set loading state to false when data is fetched
+          setLoading(false);
         });
     }
   }, [productId]);

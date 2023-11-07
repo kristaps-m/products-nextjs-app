@@ -65,3 +65,6 @@ this works for search
 
 Debounce:
 https://stackoverflow.com/questions/42217121/how-to-start-search-only-when-user-stops-typing
+
+Pagination:
+https://blog.logrocket.com/add-pagination-next-js-app/

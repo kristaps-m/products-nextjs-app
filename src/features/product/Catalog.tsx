@@ -10,7 +10,7 @@ export default function Catalog() {
   const [loading, setLoading] = useState(true);
   // DEBOUNCE
   const [text, setText] = useState("");
-  const [searchTerm] = useDebounce(text, 2000);
+  const [searchTerm] = useDebounce(text, 2000); // 2 seconds
   const handleReset = () => {
     setText("");
   };
@@ -32,15 +32,6 @@ export default function Catalog() {
     <>
       <NavigationButtons />
       <div className="flex justify-center">
-        {/* <input
-          type="text"
-          value={text}
-          placeholder="Search products..."
-          onChange={(e) => {
-            setText(e.target.value);
-          }}
-        />
-        <button onClick={handleReset}>Reset</button> */}
         <input
           type="text"
           value={text}
