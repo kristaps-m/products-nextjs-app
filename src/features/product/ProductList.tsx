@@ -8,11 +8,27 @@ interface Props {
 }
 
 export default function ProductList({ products }: Props) {
+  // Loading state
+  // const [loading, setLoading] = useState(false);
+
   const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 2;
   const onPageChange = (page: any) => {
     setCurrentPage(page);
   };
+  // const onPageChange = async (page: any) => {
+  //   // Show a loading indicator while changing pages
+  //   setLoading(true);
+
+  //   // Simulate an asynchronous operation (you should fetch data here)
+  //   await new Promise((resolve) => setTimeout(resolve, 1000));
+
+  //   // Update the current page
+  //   setCurrentPage(page);
+
+  //   // Hide the loading indicator when the new page is ready
+  //   setLoading(false);
+  // };
 
   const groupProductsByRows = (products: Product[], itemsPerRow: number) => {
     const rows = [];
@@ -27,7 +43,7 @@ export default function ProductList({ products }: Props) {
   const paginatedPosts: Product[][] = paginate(rows, currentPage, pageSize);
 
   return (
-    <div className="items-center">
+    <div data-testid="productList-1" className="items-center">
       {paginatedPosts.map((row, rowIndex) => (
         <div className="flex space-x-4" key={rowIndex}>
           {row.map((product) => (

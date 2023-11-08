@@ -2,7 +2,7 @@ import React from "react";
 
 export default function HomePage() {
   return (
-    <div>
+    <div data-testid="homePage-1">
       <h1 className="flex justify-center text-3xl font-bold mb-4">
         Welcome to Our Product Shop
       </h1>

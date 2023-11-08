@@ -21,7 +21,7 @@ export default function Catalog() {
         const filteredProducts = products.products.filter((product: Product) =>
           product.name.toLowerCase().includes(searchTerm.toLowerCase())
         );
-        console.log(filteredProducts, "these are filteredProducts");
+
         setProducts(filteredProducts);
       })
       .catch((error) => console.error(error))
@@ -29,7 +29,7 @@ export default function Catalog() {
   }, [searchTerm]);
 
   return (
-    <>
+    <div data-testid="catalog-1">
       <NavigationButtons />
       <div className="flex justify-center">
         <input
@@ -54,6 +54,6 @@ export default function Catalog() {
       <div className="flex justify-center">
         {loading ? <h1>Loading...</h1> : <ProductList products={products} />}
       </div>
-    </>
+    </div>
   );
 }

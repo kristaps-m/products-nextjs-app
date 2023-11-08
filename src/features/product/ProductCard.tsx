@@ -6,7 +6,10 @@ interface Props {
 
 export default function ProductCard({ product }: Props) {
   return (
-    <div className="w-1/3 p-3 m-3 bg-white rounded-lg shadow-lg overflow-hidden">
+    <div
+      data-testid="productCard-1"
+      className="w-1/3 p-3 m-3 bg-white rounded-lg shadow-lg overflow-hidden"
+    >
       <img
         src={`https://picsum.photos/id/${product.id + 10}/200/300`}
         alt={product.name}
