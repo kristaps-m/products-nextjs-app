@@ -37,7 +37,7 @@ const ProductDetails = () => {
   }, [productId]);
 
   return (
-    <div>
+    <div data-testid="productDetails-1">
       <NavigationButtons />
       <div className="flex justify-center items-center min-h-screen">
         {loading ? (

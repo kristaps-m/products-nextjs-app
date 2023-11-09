@@ -68,3 +68,7 @@ https://stackoverflow.com/questions/42217121/how-to-start-search-only-when-user-
 
 Pagination:
 https://blog.logrocket.com/add-pagination-next-js-app/
+
+Tests:
+https://www.youtube.com/watch?v=ML5egqL3YFE
+https://fek.io/blog/add-jest-testing-framework-to-an-existing-next-js-app/
