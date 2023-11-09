@@ -8,27 +8,11 @@ interface Props {
 }
 
 export default function ProductList({ products }: Props) {
-  // Loading state
-  // const [loading, setLoading] = useState(false);
-
   const [currentPage, setCurrentPage] = useState(1);
-  const pageSize = 2;
+  const pageSize = 4;
   const onPageChange = (page: any) => {
     setCurrentPage(page);
   };
-  // const onPageChange = async (page: any) => {
-  //   // Show a loading indicator while changing pages
-  //   setLoading(true);
-
-  //   // Simulate an asynchronous operation (you should fetch data here)
-  //   await new Promise((resolve) => setTimeout(resolve, 1000));
-
-  //   // Update the current page
-  //   setCurrentPage(page);
-
-  //   // Hide the loading indicator when the new page is ready
-  //   setLoading(false);
-  // };
 
   const groupProductsByRows = (products: Product[], itemsPerRow: number) => {
     const rows = [];
@@ -40,25 +24,31 @@ export default function ProductList({ products }: Props) {
 
   // Group products into rows of 2
   const rows = groupProductsByRows(products, 2);
-  const paginatedPosts: Product[][] = paginate(rows, currentPage, pageSize);
+  // const paginatedPosts: Product[][] = paginate(rows, currentPage, pageSize);
+  const paginatedPosts: Product[] = paginate(products, currentPage, pageSize);
 
   return (
-    <div data-testid="productList-1" className="items-center">
-      {paginatedPosts.map((row, rowIndex) => (
-        <div className="flex space-x-4" key={rowIndex}>
-          {row.map((product) => (
-            <div
-              key={product.id}
-              className="w-1/3 p-3 m-3 hover:bg-gray-100 transition duration-300 ease-in-out transform hover:-translate-y-1"
-            >
-              <ProductCard product={product} />
-            </div>
-          ))}
-        </div>
-      ))}
+    <div data-testid="productList-1">
+      {/* paginatedPosts */}
+      {/* {paginatedPosts.map((row, rowIndex) => ( */}
+      {/* <key={rowIndex}></key=> */}
+      {/*  flex space-x-4 */}
+      {/* className="grid grid-cols-2" */}
+      <div className="grid grid-cols-2 gap-4 flex space-x-4">
+        {paginatedPosts.map((product) => (
+          <div
+            key={product.id}
+            // w-1/3 p-3 m-3
+            className="hover:bg-gray-100 transition duration-300 ease-in-out transform hover:-translate-y-1"
+          >
+            <ProductCard product={product} />
+          </div>
+        ))}
+      </div>
+      {/* ))} */}
       <br />
       <Pagination
-        items={rows.length}
+        items={products.length} // rows.length
         currentPage={currentPage} // 1
         pageSize={pageSize} // 2
         onPageChange={onPageChange}
