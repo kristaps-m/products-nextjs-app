@@ -54,14 +54,11 @@ export default function ProductList() {
         >
           Reset
         </button>
-        {/* <h2>uncomment this for searchterm testing</h2>
-        <p>Actual value: {text}</p>
-        <p>Debounce value: {searchTerm}</p> */}
       </div>
       {loading ? (
         <h1>Loading...</h1>
       ) : (
-        <div className="grid grid-cols-2 gap-4 flex space-x-4">
+        <div className="grid grid-cols-2 gap-4">
           {paginatedPosts.map((product) => (
             <div
               key={product.id}
@@ -76,7 +73,7 @@ export default function ProductList() {
       <Pagination
         items={products.length}
         currentPage={currentPage} // 1
-        pageSize={pageSize} // 2
+        pageSize={pageSize}
         onPageChange={onPageChange}
       />
     </div>

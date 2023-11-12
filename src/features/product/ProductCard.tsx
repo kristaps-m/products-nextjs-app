@@ -16,7 +16,6 @@ export default function ProductCard({ product }: Props) {
         className="w-full h-48 object-cover"
       />
       <div className="p-4">
-        {/* <p>Id for testing{product.id}</p> */}
         <h3 className="text-xl font-bold mb-2">{product.name}</h3>
         <p className="text-gray-600 text-sm">
           Price: ${product.price.toFixed(2)}
