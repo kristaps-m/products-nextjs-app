@@ -1,8 +1,6 @@
 import axios, { AxiosError, AxiosResponse } from "axios";
 import { toast } from "react-toastify";
 
-const sleep = () => new Promise((resolve) => setTimeout(resolve, 300));
-
 axios.defaults.baseURL =
   "https://run.mocky.io/v3/b54fe93f-f5a1-426b-a76c-e43d246901fd";
 
@@ -10,7 +8,6 @@ const responseBody = (response: AxiosResponse) => response.data;
 
 axios.interceptors.response.use(
   async (response) => {
-    // await sleep();
     return response;
   },
   (error: AxiosError) => {
@@ -32,12 +29,6 @@ axios.interceptors.response.use(
       case 401:
         toast.error(data.title);
         break;
-      // case 500:
-      //   history.push({
-      //     pathname: "/server-error",
-      //     state: { error: data },
-      //   });
-      //   break;
       default:
         break;
     }

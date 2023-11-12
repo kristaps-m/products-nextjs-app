@@ -11,13 +11,13 @@ export default function HomePage() {
       </p>
       <br />
       <br />
-      <div className="product flex flex-wrap items-center justify-center p-4 bg-white rounded-lg shadow-lg">
+      <div className="product p-4 bg-white rounded-lg shadow-lg max-w-[80%]">
         <img
           src="https://picsum.photos/id/292/500/500"
           alt="Product Image"
-          className="product-image rounded-lg lg:w-1/2 mt-4 lg:mt-0"
+          className="product-image rounded-lg"
         />
-        <div className="product-details lg:w-1/2">
+        <div className="product-details">
           <h3 className="text-xl font-semibold">
             Top Product of the previous month:
           </h3>
@@ -37,7 +37,7 @@ export default function HomePage() {
           <p className="text-sm font-semibold text-green-600">Price: $8.99</p>
         </div>
       </div>
-      <p className="flex justify-center">
+      <p className="flex justify-center p-5 px-10">
         DISCLAIMER: Images are just to represent possible picture size in a real
         application. Do not take what&apos;s displayed in pictures seriously.
       </p>
